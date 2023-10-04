@@ -1,0 +1,82 @@
+.navbar {
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.menuDash,
+.menuRes {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar-brand img {
+    height: 100px;
+}
+
+.menuRes {
+    background:transparent;
+    border-bottom: 1px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: none;
+}
+
+.menuDash li a,
+.menuRes li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.menuDash li {
+    float: left;
+}
+
+.menuDash li a:hover,
+.menuRes li a:hover {
+    font-weight: 500;
+}
+
+.btnMenu,
+.dropdown {
+    display: none;
+}
+
+@media (max-width: 720px) {
+
+    .menuRes{
+        display: block;
+    }
+  
+
+    .menuDash {
+        display: none;
+    }
+
+    .btnMenu {
+        display: flex;
+    }
+
+    .dropdown {
+        display: unset;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .menuDash {
+        display: none;
+    }
+
+    .btnMenu {
+        display: flex;
+    }
+
+    .dropdown {
+        display: unset;
+    }
+}

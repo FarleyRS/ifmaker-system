@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+    </a>
+    <ul class="menuDash">
+      <li><a href="/in/ponto">Ponto</a></li>
+      <li><a href="#">Agenda</a></li>
+      <li><a href="#">Atualizações</a></li>
+      <li><a href="#">Projetos</a></li>
+      <li><a href="/in/dashboard">Início</a></li>
+    </ul>
+
+    <div class="dropdown">
+      <button type="button" class="btn btn-secondary btn-sm btnMenu" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"
+        (click)="openMenu()">
+        <mat-icon aria-hidden="false" fontIcon="menu" *ngIf="!menuVisible"></mat-icon>
+        <mat-icon aria-hidden="false" fontIcon="close" *ngIf="menuVisible"></mat-icon>
+      </button>
+    </div>
+
+  </div>
+</nav>
+<ul class="menuRes" *ngIf="menuVisible">
+  <li><a href="#">Início</a></li>
+  <li><a href="#">Projetos</a></li>
+  <li><a href="#">Atualizações</a></li>
+  <li><a href="#">Agenda</a></li>
+  <li><a href="#">Ponto</a></li>
+</ul>
