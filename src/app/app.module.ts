@@ -15,6 +15,8 @@ import { MemberComponent } from './Pages/dashboard/member/member.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppbarComponent } from './Components/appbar/appbar.component';
 import { PontoComponent } from './Pages/dashboard/ponto/ponto.component';
+import { FooterComponent } from './Components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { PontoComponent } from './Pages/dashboard/ponto/ponto.component';
     MemberComponent,
     PontoComponent,
     AppbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
