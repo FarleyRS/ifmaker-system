@@ -1,20 +1,20 @@
 
 
-section{
+.apresentacao{
     display: block;
     padding: 10%;
 }
 
-.section{
+.apresentacao{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.section img{
+.apresentacao img{
     width: 40%;
 }
 
-.section span{
+.apresentacao span{
     padding: 3%;
     margin-bottom: 10%;
     line-height: 100%;
@@ -24,16 +24,16 @@ section{
 }
 
 
-.section1{
+.apresentacao1{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.section1 img{
+.apresentacao1 img{
     width: 40%;
 }
 
-.section1 span{
+.apresentacao1 span{
     padding: 3%;
     margin-bottom: 10%;
     line-height: 100%;

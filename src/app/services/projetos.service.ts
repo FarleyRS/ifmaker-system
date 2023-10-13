@@ -11,7 +11,10 @@ export class ProjetosService {
   private API = environment.API;
   private LOCAL = 'http://localhost:3000/';
 
-  public buscarMeusProjetos() {}
+  public buscarMeusProjetos(id: string) {
+
+    return this.http.get(`${this.API}projeto/meus-projetos/${id}`);
+  }
 
   public buscarTodosProjetos() {}
 }

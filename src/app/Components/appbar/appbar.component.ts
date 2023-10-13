@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+//import { IUsuario } from 'src/app/interfaces/IUsuario';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-appbar',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appbar.component.css'],
 })
 export class AppbarComponent implements OnInit {
+  constructor(private router: Router) {}
+
   menuVisible = false;
+
   ngOnInit(): void {
     this.menuVisible = false;
   }
+
   openMenu() {
     if (this.menuVisible) {
       this.menuVisible = false;

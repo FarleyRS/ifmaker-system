@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUsuario } from 'src/app/interfaces/IUsuario';
+import { ProjetosService } from 'src/app/services/projetos.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -16,11 +17,19 @@ export class MemberComponent implements OnInit {
     id: '',
     nome: '',
     email: '',
-    nivel_acesso: ''
+    nivel_acesso: '',
+    num_projetos: 0,
+    status: '',
   };
+
   ngOnInit(): void {
-    this.menuVisible = false;
+    this.lerDados();
+    
     this.validaToken();
+    const sessao = sessionStorage.getItem('usuario_logado');
+    const { nome } = JSON.parse(sessao!);
+    this.usuario!.nome = nome;
+    this.menuVisible = false;
   }
 
   openMenu() {
@@ -43,7 +52,7 @@ export class MemberComponent implements OnInit {
           this.usuario!.nome = res.nome;
           this.usuario!.email = res.email;
           this.usuario!.nivel_acesso = res.nivel_acesso;
-          console.log(this.usuario);
+
           this.verifyAccess();
         },
         (err) => {
@@ -55,25 +64,34 @@ export class MemberComponent implements OnInit {
     }
   }
 
-  verifyAccess() {
-    
-    if (this.usuario.nivel_acesso === "admin") {
-      this.isAdmin();
-      
-    } else if (this.usuario.nivel_acesso === "member") {
-      this.isMember();
-      
+  lerDados() {
+    const projetos = sessionStorage.getItem('projetos');
+    const status = sessionStorage.getItem('status');
+    if(projetos == null || status == null) {
+      setTimeout(() => {
+        this.lerDados();
+      }, 100);
     } else {
-      console.log('not member');
-      // this.router.navigate(['/login']);
+      this.usuario.status = status!;
+      this.usuario.num_projetos = Number(projetos);
+    }
+  }
+
+  verifyAccess() {
+    if (this.usuario.nivel_acesso === 'admin') {
+      this.isAdmin();
+    } else if (this.usuario.nivel_acesso === 'member') {
+      this.isMember();
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 
   isAdmin() {
-    console.log('is admin');
+    console.log('is admin 2');
   }
 
   isMember() {
-    console.log('is member');
+    console.log('is member 2');
   }
 }

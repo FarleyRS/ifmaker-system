@@ -6,8 +6,28 @@
   overflow: hidden;
 }
 
+.btnMenuLi {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.btnMenuLi:hover {
+  font-weight: 500;
+}
+
 .menuRes {
+  display: none;
   background: #212529;
+}
+
+.menuRes li {
+  display: flex;
+  justify-content: center;
 }
 
 .menuDash li a,
